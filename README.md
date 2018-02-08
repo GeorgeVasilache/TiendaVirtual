@@ -1,6 +1,6 @@
 # TiendaVirtual
 Proyecto de fin del módulo de Desarrollo Web en Entorno Servidor (DAW).
-## objetivos
+## Objetivos
 
 Desarrollar una tienda virtual en PHP. Se debe satisfacer, al menos:
 
