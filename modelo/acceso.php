@@ -95,4 +95,12 @@
     
     return mysql_fetch_array($result);
  }
+ 
+ function anyadirProducto($nombre, $desc, $categoria, $precio, $stock , $img){
+    $link = abrir_conexion();
+
+    $result = consultar_base_de_datos("INSERT INTO productos VALUES(default, '{$nombre}', '{$desc}', '{$precio}', '{$stock}', '{$categoria}','{$img}');", $link);
+    
+    var_dump($result);
+ }
 ?>
