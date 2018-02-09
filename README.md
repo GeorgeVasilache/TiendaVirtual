@@ -21,5 +21,6 @@ Desarrollar una tienda virtual en PHP. Se debe satisfacer, al menos:
 
 * La tienda debe ser funcional; los pedidos deberían reflejar una disminución de stock,
   y el administrador debería poder examinar los pedidos (esto es, su contenido y quién los ha efectuado).
+  
 ```
 
