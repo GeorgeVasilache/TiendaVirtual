@@ -16,3 +16,9 @@ Desarrollar una tienda virtual en PHP. Se debe satisfacer, al menos:
 
 * Se debe hacer uso de cookies, sesiones y arrays. El proyecto debe ser orientado a objetos, estructurarse según el patrón MVC, e implementar un servicio web.
 
+````
+### NOTA:
+
+* La tienda debe ser funcional; los pedidos deberían reflejar una disminución de stock, y el administrador debería poder examinar los pedidos (esto es, su contenido y quién los ha efectuado).
+```
+
