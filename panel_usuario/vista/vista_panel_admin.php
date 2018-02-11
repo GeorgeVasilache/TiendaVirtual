@@ -3,7 +3,7 @@
       <div class="container">
         <div class="jumbotron jumbotron-fluid mt-3">
           <div class="container">
-            <h1 class="display-4">Panel del administrador</h1>
+            <h1 class="display-1">Panel del administrador</h1>
             <p class="lead">Desde aquí se puede añadir nuevos productos, borrarlos, y ver un listado de los pedidos.</p>
           </div>
         </div>
@@ -50,5 +50,9 @@
         <button type="submit" class="btn btn-primary mb-3">Añadir producto</button>
         </form>
         </div>
+      </div>
+      <div class="container">
+        <h1 class="display-3">Lista de Productos</h1>
+        <?php mostrarProductos() ?>
       </div>
     <?php require_once("/home/ubuntu/workspace/TiendaVirtual/vista/plantilla_footer.php");?>

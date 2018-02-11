@@ -101,6 +101,12 @@
 
     $result = consultar_base_de_datos("INSERT INTO productos VALUES(default, '{$nombre}', '{$desc}', '{$precio}', '{$stock}', '{$categoria}','{$img}');", $link);
     
-    var_dump($result);
+ }
+ 
+ function eliminarProducto($id){
+  
+   $link = abrir_conexion();
+
+   $result = consultar_base_de_datos("delete from productos where id='$id';", $link);
  }
 ?>
