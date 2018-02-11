@@ -43,6 +43,7 @@
       } 
       else{
         $titulo = "Panel de usuario";
+        $usuario = sacarUsuario($_COOKIE["id"]);
         
         //vista del panel de usuario
         require_once("panel_usuario/vista/vista_panel_usuario.php");

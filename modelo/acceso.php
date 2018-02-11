@@ -96,6 +96,7 @@
     return mysql_fetch_array($result);
  }
  
+ //Funcion que inserta un nuevo producto en la base de datos 
  function anyadirProducto($nombre, $desc, $categoria, $precio, $stock , $img){
     $link = abrir_conexion();
 
@@ -103,10 +104,19 @@
     
  }
  
+ //Funcion que elimina el producto con la id indicada
  function eliminarProducto($id){
   
    $link = abrir_conexion();
 
    $result = consultar_base_de_datos("delete from productos where id='$id';", $link);
+ }
+ 
+ //Funcion que elimina el usuario con la id indicada
+ function eliminarUsuario($id){
+  
+   $link = abrir_conexion();
+
+   $result = consultar_base_de_datos("delete from usuarios where id='$id';", $link);
  }
 ?>
