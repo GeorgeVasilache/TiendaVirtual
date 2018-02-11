@@ -16,8 +16,12 @@
           
           //Si la subida del archivo se realiza con éxito, se introducen los datos en la base de datos, y se redirige al panel del admin otra vez
           if (move_uploaded_file($_FILES['img']['tmp_name'], $url)) {
-              anyadirProducto($nombre, $desc, $cat, $precio, $stock, $url);
-              header("Location: panel_usuario.php?nuevo=1");
+                    
+                    //cambiamos la url para que cargue la imagen correctamente cuando se tenga que mostrar
+                    $url = "/TiendaVirtual/img/". $_POST['nombre'].".".$info->getExtension();
+                    
+                    anyadirProducto($nombre, $desc, $cat, $precio, $stock, $url);
+                    header("Location: panel_usuario.php?nuevo=1");
           } else {
               header("Location: panel_usuario.php?nuevo=0");
           }

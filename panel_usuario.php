@@ -10,8 +10,10 @@
       $titulo = "Panel del administrador";
       
       //Si se acaba de añadir un producto nuevo, saldrá un mensaje
-      if($_GET["nuevo"] == 1) $msj_produco_nuevo = "<span class='text-success ml-2'>Producto añadido con éxito</span>";
-      if($_GET["nuevo"] == 0) $msj_produco_nuevo = "<span class='text-danger ml-2'>Error al añadir producto</span>";
+      if (isset($_GET["nuevo"])){
+        if($_GET["nuevo"] == 1) $msj_producto_nuevo = "<span class='text-success ml-2'>Producto añadido con éxito</span>";
+        else $msj_producto_nuevo = "<span class='text-danger ml-2'>Error al añadir producto</span>";
+      }
       
       //funcion para mostrar todos los productos de la base de datos
       
