@@ -1,10 +1,13 @@
 <?php
+    //Clase que se utilizará para los productos del carrito de la compra
     class Producto{
         private $id;
         private $nombre;
         private $desc;
         private $categoria;
         private $precio;
+        private $stock;
+        private $img;
         private $cantidad;
         private $total;
         
@@ -18,6 +21,8 @@
             $this->desc = $producto["descripcion"];
             $this->precio = $producto["precio"];
             $this->categoria = $producto["categoria"];
+            $this->stock = $producto["stock"];
+            $this->img = $producto["img"];
             $this->cantidad = 1;
         }
         

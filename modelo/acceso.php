@@ -112,11 +112,13 @@
    $result = consultar_base_de_datos("delete from productos where id='$id';", $link);
  }
  
- //Funcion que elimina el usuario con la id indicada
+ //Función que elimina el usuario con la id indicada
  function eliminarUsuario($id){
   
    $link = abrir_conexion();
 
    $result = consultar_base_de_datos("delete from usuarios where id='$id';", $link);
  }
+ 
+ 
 ?>
