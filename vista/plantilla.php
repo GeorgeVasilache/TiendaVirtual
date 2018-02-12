@@ -11,15 +11,11 @@
 
     <title><?php echo $titulo ?></title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link href="/TiendaVirtual/vista/css/modern-business.css" rel="stylesheet">
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/TiendaVirtual/vista/js/mostrarCategoria.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+    <link href="/TiendaVirtual/vista/css/modern-business.css" rel="stylesheet"/>
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-
+    <link rel="stylesheet" href="/TiendaVirtual/vista/css/pagina_principal.css" type="text/css" />
   </head>
 
   <body>
@@ -39,9 +35,9 @@
                   Productos
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="productos">
-                  <a class="dropdown-item" href="productos.php?cat=1">Categoría 1</a>
-                  <a class="dropdown-item" href="productos.php?cat=2">Categoría 2</a>
-                  <a class="dropdown-item" href="productos.php?cat=3">Categoría 3</a>
+                  <a class="dropdown-item" href="productos.php?cat=1">Magic The Gathering</a>
+                  <a class="dropdown-item" href="productos.php?cat=2">Liros de Rol</a>
+                  <a class="dropdown-item" href="productos.php?cat=3">Juegos de mesa</a>
                 </div>
               </li>
           <?php echo imprimirInicioSesion() ?>

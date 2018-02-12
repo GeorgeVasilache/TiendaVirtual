@@ -1,4 +1,5 @@
 <?php
+    //Cierra la sesión actual borrando al cookie
     function cerrarSesion(){
           
             $name="id";
@@ -15,6 +16,7 @@
             exit;
     }
     
+    //Si no hay una sesión abierta, imprime el formulario de inicio de sesion, si hay una sesión abierta, imprime los controles del usuario
     function imprimirInicioSesion(){
         
         if(isset($_COOKIE["id"])){
@@ -61,10 +63,8 @@
               }
               else return "<form class='form-inline' action='#' method='post'>
                         <div class='form-group'>
-                          <label for='nickNav' class='text-light'>Nick</label>
-                          <input type='text' id='nickNav' name='nick' class='form-control mx-sm-3' required='required'>
-                          <label for='passNav' class='text-light'>Contraseña</label>
-                          <input type='password' id='passNav' name='pass' class='form-control mx-sm-3' required title='Mínimo 10 carácteres' pattern='.{10,}'>
+                          <input type='text' id='nickNav' name='nick' class='form-control mx-sm-3' placeholder = 'Nick'required='required'>
+                          <input type='password' id='passNav' name='pass' class='form-control mx-sm-3' placeholder = 'Contraseña' required title='Mínimo 10 carácteres' pattern='.{10,}'>
                         </div>
                         <button type='submit' class='btn btn-primary mr-3'>Iniciar Sesión</button>
                       </form>
@@ -80,10 +80,8 @@
             else{
               return "<form class='form-inline' action='#' method='post'>
                         <div class='form-group'>
-                          <label for='nickNav' class='text-light'>Nick</label>
-                          <input type='text' id='nickNav' name='nick' class='form-control mx-sm-3' required='required'>
-                          <label for='passNav' class='text-light'>Contraseña</label>
-                          <input type='password' id='passNav' name='pass' class='form-control mx-sm-3' required title='Mínimo 10 carácteres' pattern='.{10,}'>
+                          <input type='text' id='nickNav' name='nick' class='form-control mx-sm-3' placeholder = 'Nick' required='required'>
+                          <input type='password' id='passNav' name='pass' class='form-control mx-sm-3' placeholder ='Contraseña' required title='Mínimo 10 carácteres' pattern='.{10,}'>
                         </div>
                         <button type='submit' class='btn btn-primary mr-3'>Iniciar Sesión</button>
                       </form>
