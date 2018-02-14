@@ -18,6 +18,10 @@
             return $this->total;
         }
         
+        public function setTotal($total){
+            return $this->total = $total;
+        }
+        
         //METODOS
         
         public function anyadirProducto($producto){
@@ -28,11 +32,13 @@
             for($i = 0 ; $i < count($this->productos) ; $i++){
                 if($this->productos[$i]->getId() == $producto->getId()){
                     $this->productos[$i]->aumentarCantidad();
+                    $this->calcularTotal();
                     return;
                 }
             }
             
             $this->productos[] = $producto;
+            $this->calcularTotal();
         }
         
         public function quitarProducto($id){
@@ -48,9 +54,13 @@
                 }
             }
             
+            $this->calcularTotal();
+            
         }
         
         public function calcularTotal(){
+            
+            $this->setTotal(0);
             
             //recorremos todos los productos y sumamos el precio de cada productos por la cantidad de productos de cada tipo
             for($i = 0 ; $i < count($this->productos) ; $i++){

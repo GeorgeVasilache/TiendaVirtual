@@ -16,7 +16,6 @@
             
             $producto = sacarProducto($id);
             
-            
             $this->nombre = $producto["nombre"];
             $this->desc = $producto["descripcion"];
             $this->precio = $producto["precio"];
@@ -24,6 +23,7 @@
             $this->stock = $producto["stock"];
             $this->img = $producto["img"];
             $this->cantidad = 1;
+            $this->total = $this->precio;
         }
         
         //GETTERS

@@ -31,7 +31,7 @@
             echo "<td>{$producto->getCantidad()}</td>";
             echo "<td>{$producto->getTotal()}€</td>";
         }
-        echo "<tr><td></td><td></td><td></td><th>TOTAL:</th><th>{$_SESSION["carrito"]->getTotal()}€</th></tr>";
+        echo "<tr><td></td><td></td><td></td><th>TOTAL:</th><th>".$_SESSION["carrito"]->getTotal()."€</th></tr>";
         echo "</table></div>";
         
         echo "<button type='button' class='btn btn-lg btn-primary'>Finalizar Compra</button>";

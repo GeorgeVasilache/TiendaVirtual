@@ -4,8 +4,8 @@
           
             borrarCookie();
             
-            //Destruiremos también la sesión para destruir el carrito
-            session_destroy();
+            //Si hay un carrito creado, se destruye la variable de sesión
+            if(isset($_SESSION["carrito"])) session_destroy();
             
             //Quitamos el parámetro x de la url
             $link = preg_replace('~(\?|&)x=[^&]*~','$1', $_SERVER['REQUEST_URI']);
