@@ -1,15 +1,18 @@
 <?php
     //Cierra la sesión actual borrando al cookie y recarla la página
-    function cerrarSesion(){
+    function cerrarSesion (){
           
             borrarCookie();
-                           
-            header ( "Location: ". strtok($_SERVER['REQUEST_URI'], '?'));
+                          
+            //Quitamos el parámetro x de la url
+            $link = preg_replace('~(\?|&)x=[^&]*~','$1', $_SERVER['REQUEST_URI']);
+            
+            header ( "Location: ". $link);
             exit;
     }
     
     //Cierra la borrando la cookie pero si recargar la página
-    function borrarCookie(){
+    function borrarCookie (){
             $name="id";
             $value= "";
             $expires=time() - 10;
@@ -22,12 +25,17 @@
     }
     
     //Si no hay una sesión abierta, imprime el formulario de inicio de sesion, si hay una sesión abierta, imprime los controles del usuario
-    function imprimirInicioSesion(){
+    function imprimirInicioSesion (){
         
         if(isset($_COOKIE["id"])){
             if($_GET["x"] == 1) cerrarSesion();
             else{
               $usuario = sacarUsuario($_COOKIE["id"]);
+              
+              //Comprobamos si ya hay parámetros get en la url
+              
+              if(strpos($_SERVER["REQUEST_URI"], "?") === false) $url = $_SERVER['REQUEST_URI']."?x=1";
+              else                                               $url = $_SERVER['REQUEST_URI']."&x=1";
               
               return "<span class='text-primary m-2'>Bienvenid@, {$usuario["nombre"]}</span>
                 <li>
@@ -41,7 +49,7 @@
                   </a>
                 </li>
                 <li class='nav-item mx-2'>
-                  <a href='".$_SERVER['REQUEST_URI']."?x=1' class='nav-link'>
+                  <a href='".$url."' class='nav-link'>
                     <i class='material-icons text-danger' title='Cerrar sesión'>exit_to_app</i>
                   </a>
                 </li>";
@@ -49,6 +57,7 @@
         }
         else{
             if(isset($_POST["nick"])){
+              //Si las credenciales proporcionadas son correctas, se crea la cookie
               if(comprobarUsuario($_POST["nick"], $_POST["pass"])){
                 
                 $id = sacarId($_POST["nick"]);
@@ -62,9 +71,17 @@
                 $HttpOnly=true;
            
                 setcookie ($name,$value,$expires,$path,$domain,$secure,$HttpeOnly);
-                       
-                header ( "Location: ".strtok($_SERVER['REQUEST_URI'], '?'));
-                exit;
+                
+                //Si nos encntramos en el index, recargamos la página sin parámetros get
+                if (substr($_SERVER['REQUEST_URI'], 44, 5 ) === "index"){
+                  header ( "Location: ".strtok($_SERVER['REQUEST_URI'], '?'));
+                  exit;
+                }
+                else{
+                  header ( "Location: #");
+                  exit;
+                }
+                
               }
               else return "<form class='form-inline' action='#' method='post'>
                         <div class='form-group'>
@@ -93,5 +110,12 @@
                       <span class='text-warning mt-2'>¿No tienes cuenta? <a href='registro.php'>Regístrate</a></span>";
             }
         }
+    }
+    
+    //Función que dice si hay una sesión abierta o no
+    function sesionAbierta (){
+      
+      if(isset($_COOKIE["id"])) return true;
+      else return false;
     }
 ?>

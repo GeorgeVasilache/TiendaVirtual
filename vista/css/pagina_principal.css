@@ -1,6 +1,9 @@
 .carousel-inner > .carousel-item > img{
       margin:0 auto;
 }
-.card-img-top{
+.carta{
       height: 300px;
+}
+.carrito{
+      width: 200px !important;
 }

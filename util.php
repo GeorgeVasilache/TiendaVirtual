@@ -7,7 +7,7 @@ function imprimirCartas ($productos_extra){
             
             echo    "<div class='col-lg-4 col-md-6 mb-4'>
                               <div class='card h-100'>
-                                <a href='producto.php?id={$producto["id"]}'><img class='card-img-top' src='{$producto["img"]}'></a>
+                                <a href='producto.php?id={$producto["id"]}'><img class='card-img-top carta' src='{$producto["img"]}'></a>
                                 <div class='card-body'>
                                   <h4 class='card-title'>
                                     <a href='producto.php?id={$producto["id"]}'>{$producto["nombre"]}</a>

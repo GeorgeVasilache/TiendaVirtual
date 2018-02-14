@@ -21,7 +21,7 @@
   <body>
     <header>
       <!-- Navegación -->
-      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="index.php">Tienda virtual de George</a>
           <?php echo $msjRegistro ?>
