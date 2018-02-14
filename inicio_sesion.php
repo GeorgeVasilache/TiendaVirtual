@@ -3,7 +3,10 @@
     function cerrarSesion (){
           
             borrarCookie();
-                          
+            
+            //Destruiremos también la sesión para destruir el carrito
+            session_destroy();
+            
             //Quitamos el parámetro x de la url
             $link = preg_replace('~(\?|&)x=[^&]*~','$1', $_SERVER['REQUEST_URI']);
             

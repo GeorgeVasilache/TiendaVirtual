@@ -1,10 +1,10 @@
 <?php
     //Clases
-    require_once("/home/ubuntu/workspace/TiendaVirtual/carrito/Carrito.php");
-    require_once("/home/ubuntu/workspace/TiendaVirtual/carrito/Producto.php");
+    require_once("carrito/Carrito.php");
+    require_once("carrito/Producto.php");
     
     //Acceso a la base de datos
-    require_once("/home/ubuntu/workspace/TiendaVirtual/modelo/acceso.php");
+    require_once("modelo/acceso.php");
     
     //Controlador
     
@@ -16,23 +16,7 @@
             
     if(!isset($_SESSION["carrito"])){
         
-        //Si no está creado, se crea el carrito
-        $_SESSION["carrito"] = new Carrito();
-        
-        $producto1 = new Producto(1);
-        $producto2 = new Producto(1);
-        $producto3 = new Producto(1);
-        $producto4 = new Producto(2);
-        $producto5 = new Producto(2);
-        
-
-        $_SESSION["carrito"]->anyadirProducto($producto1);
-        $_SESSION["carrito"]->anyadirProducto($producto2);
-        $_SESSION["carrito"]->anyadirProducto($producto3);
-        $_SESSION["carrito"]->anyadirProducto($producto4);
-        $_SESSION["carrito"]->anyadirProducto($producto5);
-        
-        $_SESSION["carrito"]->calcularTotal();
+        header("Location: index.php");
     }
     function mostrarCarrito(){
         $productos = $_SESSION["carrito"]->getProductos();
@@ -54,4 +38,4 @@
     }
     
     //Vista
-    require_once("/home/ubuntu/workspace/TiendaVirtual/carrito/vista/vista_carrito.php");
+    require_once("carrito/vista/vista_carrito.php");
