@@ -1,7 +1,15 @@
 <?php
-    //Cierra la sesión actual borrando al cookie
+    //Cierra la sesión actual borrando al cookie y recarla la página
     function cerrarSesion(){
           
+            borrarCookie();
+                           
+            header ( "Location: ". strtok($_SERVER['REQUEST_URI'], '?'));
+            exit;
+    }
+    
+    //Cierra la borrando la cookie pero si recargar la página
+    function borrarCookie(){
             $name="id";
             $value= "";
             $expires=time() - 10;
@@ -11,9 +19,6 @@
             $HttpOnly=true;
                
             setcookie ($name,$value,$expires,$path,$domain,$secure,$HttpeOnly);
-                           
-            header ( "Location: ". strtok($_SERVER['REQUEST_URI'], '?'));
-            exit;
     }
     
     //Si no hay una sesión abierta, imprime el formulario de inicio de sesion, si hay una sesión abierta, imprime los controles del usuario

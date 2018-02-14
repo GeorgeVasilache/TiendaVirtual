@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="display-4">Productos destacados</h1>
+  <h1 class="display-4">Productos destacados //Arreglar cierre de sesion</h1>
   <div id="slides" class="carousel slide my-3" data-ride="carousel">
     <div class="carousel-inner">
       <a href="producto.php?id=<?php echo $productos_slide[0]["id"] ?>" class="carousel-item active">
@@ -10,14 +10,14 @@
           </div>
       </a>
       <a href="producto.php?id=<?php echo $productos_slide[1]["id"] ?>" class="carousel-item">
-          <img class="img-fluid d-block w-50" src="<?php echo $productos_slide[1]["img"]?>">
+          <img class="img-fluid d-block w-25" src="<?php echo $productos_slide[1]["img"]?>">
           <div class="carousel-caption d-md-block">
             <h5 class="text-dark"><?php echo $productos_slide[1]["nombre"] ?></h5>
             <p class="text-dark"><?php echo $productos_slide[1]["descripcion"] ?></p>
           </div>
       </a>
       <a href="producto.php?id=<?php echo $productos_slide[2]["id"] ?>" class="carousel-item">
-          <img class="img-fluid d-block w-50" src="<?php echo $productos_slide[2]["img"]?>">
+          <img class="img-fluid d-block w-25" src="<?php echo $productos_slide[2]["img"]?>">
           <div class="carousel-caption d-md-block">
             <h5 class="text-dark"><?php echo $productos_slide[2]["nombre"] ?></h5>
             <p class="text-dark"><?php echo $productos_slide[2]["descripcion"] ?></p>

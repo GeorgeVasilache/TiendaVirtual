@@ -5,9 +5,9 @@
          require_once("inicio_sesion.php");
          
           eliminarUsuario($_GET["u"]);
-          cerrarSesion();
+          borrarCookie();
                          
-          header ( "Location: index.php");
+          header ("Location: index.php");
           exit;
 
 
