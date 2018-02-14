@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="display-4">Productos destacados //Arreglar cierre de sesion</h1>
+  <h1 class="display-4">Productos destacados</h1>
   <div id="slides" class="carousel slide my-3" data-ride="carousel">
     <div class="carousel-inner">
       <a href="producto.php?id=<?php echo $productos_slide[0]["id"] ?>" class="carousel-item active">

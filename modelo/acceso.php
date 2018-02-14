@@ -2,7 +2,7 @@
  require_once ('abstraccion.php');
 
  //Devuelve un array con todos los productos existentes en la base de datos
- function listarProductos(){
+ function listarProductos (){
       // Conexión a la base de datos
       $link = abrir_conexion();
 
@@ -20,9 +20,29 @@
       cerrar_conexion($link);
       return $productos;
  }
+ 
+ //Función que extrae los productos de la categoría indicada
+ function listarProductosPorCategoria ($cat){
+      // Conexión a la base de datos
+      $link = abrir_conexion();
+
+      // Consulta
+      $result = consultar_base_de_datos("SELECT * FROM productos where categoria='{$cat}'", $link);
+
+      // Rellenar el array
+      $productos = array();
+      while ($fila = extraer_resultados($result))
+      {
+      $productos[] = $fila;
+      }
+
+      // Cierre de conexión
+      cerrar_conexion($link);
+      return $productos;
+ }
 
  //Devuelve un producto a partir de su id
- function sacarProducto($id){
+ function sacarProducto ($id){
      // Conexión a la base de datos
       $link = abrir_conexion();
 
@@ -38,7 +58,7 @@
  }
 
  //Inserta todos los datos de un usuario nuevo en la base de datos
- function registrarUsuario($email, $nick, $pass, $nombre, $apellidos, $dir, $tlf){
+ function registrarUsuario ($email, $nick, $pass, $nombre, $apellidos, $dir, $tlf){
       // Conexión a la base de datos
       $link = abrir_conexion();
 
@@ -48,7 +68,7 @@
  }
 
  //Comprueba si el nick proporcionado ya está en la base de datos
- function comprobarDisponibilidad($nick){
+ function comprobarDisponibilidad ($nick){
       $link = abrir_conexion();
 
       // Consulta
@@ -65,7 +85,7 @@
  }
 
  //Comprueba que el nick y la contraseña proporcionados coincidan
- function comprobarUsuario($nick, $pass){
+ function comprobarUsuario ($nick, $pass){
       $link = abrir_conexion();
 
       // Consulta
@@ -78,7 +98,7 @@
  }
 
  //A partir de un nick, devuelve su id asociado
- function sacarId($nick){
+ function sacarId ($nick){
      $link = abrir_conexion();
 
      // Consulta
@@ -88,7 +108,7 @@
  }
 
  // A partir de una id proporcionada, devuelve los datos que coincidan con el mismo
- function sacarUsuario($id){
+ function sacarUsuario ($id){
     $link = abrir_conexion();
     
     $result = consultar_base_de_datos("SELECT * FROM usuarios where id='{$id}'", $link);
@@ -97,7 +117,7 @@
  }
  
  //Funcion que inserta un nuevo producto en la base de datos 
- function anyadirProducto($nombre, $desc, $categoria, $precio, $stock , $img){
+ function anyadirProducto ($nombre, $desc, $categoria, $precio, $stock , $img){
     $link = abrir_conexion();
 
     $result = consultar_base_de_datos("INSERT INTO productos VALUES(default, '{$nombre}', '{$desc}', '{$precio}', '{$stock}', '{$categoria}','{$img}');", $link);
@@ -105,7 +125,7 @@
  }
  
  //Funcion que elimina el producto con la id indicada
- function eliminarProducto($id){
+ function eliminarProducto ($id){
   
    $link = abrir_conexion();
 
@@ -113,7 +133,7 @@
  }
  
  //Función que elimina el usuario con la id indicada
- function eliminarUsuario($id){
+ function eliminarUsuario ($id){
   
    $link = abrir_conexion();
 
