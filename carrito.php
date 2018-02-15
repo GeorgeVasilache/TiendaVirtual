@@ -22,15 +22,25 @@
         $productos = $_SESSION["carrito"]->getProductos();
         
         //imprimimos la tabla con los datos de los productos del carrito
-        echo "<div class='container my-4'><table class='table table-striped'><tr class='row'><td class='col-1'></td><th class='col-1'> Nombre </th><th class='col-5'>Descripción</th><th class='col-2'>Categoría</th><th class='col-2'>Cantidad</th><th class='col-1'>Precio</th>";
+        echo "<div class='container my-4'>
+                <table class='table table-striped'>
+                    <tr class='row'>
+                        <td class='col-1'></td>
+                        <th class='col-1'> Nombre </th>
+                        <th class='col-5'>Descripción</th>
+                        <th class='col-2'>Categoría</th>
+                        <th class='col-1'>Cantidad</th>
+                        <th class='col-1'>Precio</th>
+                    </tr>";
         foreach($productos as $producto){
             
             echo "<tr class='row'><td class='col-1'> <img class='img-fluid'src='{$producto->getImg()}'/> </td>";
             echo "<td class='col-1'> {$producto->getNombre()} </td>";
             echo "<td class='col-5'> {$producto->getDesc()} </td>";
             echo "<td class='col-2'> %{$producto->getCat()}% </td>";
-            echo "<td class='col-2'> {$producto->getCantidad()} </td>";
+            echo "<td class='col-1'> {$producto->getCantidad()} </td>";
             echo "<td class='col-1'> {$producto->getTotal()}€ </td>";
+            echo "<td><button type='button' class='btn btn-warning remover' id='{$producto->getId()}'><i class='material-icons'>delete</i></button></td>";
         }
         echo "<tr class='row'><td class='col-1'></td><td class='col-1'></td><td class='col-5'></td><td class='col-2'></td></td><th class='col-2'>TOTAL:</th><th class='col-1'>".$_SESSION["carrito"]->getTotal()."€</th></tr>";
         echo "</table>";

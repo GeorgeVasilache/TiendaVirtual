@@ -8,8 +8,6 @@
     
     //Controlador
     
-    require_once("inicio_sesion.php");
-    
     session_start();
     
     //Si no existe la variable de sesión carrito, se crea
