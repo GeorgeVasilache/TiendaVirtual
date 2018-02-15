@@ -21,20 +21,21 @@
     function mostrarCarrito(){
         $productos = $_SESSION["carrito"]->getProductos();
         
-        //imprmimos la tabla con los datos de los productos del carrito
-        echo "<div class='container'><table class='table table-striped'><tr><th> Nombre </th><th>Descripción</th><th>Categoría</th><th>Cantidad</th><th>Precio</th>";
+        //imprimimos la tabla con los datos de los productos del carrito
+        echo "<div class='container my-4'><table class='table table-striped'><tr class='row'><td class='col-1'></td><th class='col-1'> Nombre </th><th class='col-5'>Descripción</th><th class='col-2'>Categoría</th><th class='col-2'>Cantidad</th><th class='col-1'>Precio</th>";
         foreach($productos as $producto){
             
-            echo "<tr><td>{$producto->getNombre()}</td>";
-            echo "<td>{$producto->getDesc()}</td>";
-            echo "<td>{$producto->getCat()}</td>";
-            echo "<td>{$producto->getCantidad()}</td>";
-            echo "<td>{$producto->getTotal()}€</td>";
+            echo "<tr class='row'><td class='col-1'> <img class='img-fluid'src='{$producto->getImg()}'/> </td>";
+            echo "<td class='col-1'> {$producto->getNombre()} </td>";
+            echo "<td class='col-5'> {$producto->getDesc()} </td>";
+            echo "<td class='col-2'> %{$producto->getCat()}% </td>";
+            echo "<td class='col-2'> {$producto->getCantidad()} </td>";
+            echo "<td class='col-1'> {$producto->getTotal()}€ </td>";
         }
-        echo "<tr><td></td><td></td><td></td><th>TOTAL:</th><th>".$_SESSION["carrito"]->getTotal()."€</th></tr>";
-        echo "</table></div>";
+        echo "<tr class='row'><td class='col-1'></td><td class='col-1'></td><td class='col-5'></td><td class='col-2'></td></td><th class='col-2'>TOTAL:</th><th class='col-1'>".$_SESSION["carrito"]->getTotal()."€</th></tr>";
+        echo "</table>";
         
-        echo "<button type='button' class='btn btn-lg btn-primary'>Finalizar Compra</button>";
+        echo "<a href='confirmar_compra.php' class='btn btn-lg btn-primary'>Finalizar Compra</a></div>";
     }
     
     //Vista

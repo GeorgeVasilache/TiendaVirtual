@@ -12,6 +12,7 @@
          Stock : <?php echo $producto["stock"] ?>
         <?php echo $comprar ?>
         </p>
+        <p id="respuesta"></p>
         <span class="text-warning">★ ★ ★ ★ ☆</span>
       </div>
     </div>

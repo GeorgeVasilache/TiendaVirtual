@@ -10,21 +10,30 @@
         
         //GETTERS
         
-        public function getProductos(){
+        public function getProductos (){
             return $this->productos;
+        }
+        
+        public function getProducto ($id){
+            
+            foreach($this->productos as $producto){
+                if ($producto->getId() == $id) return $producto;
+            }
+            
+            return false;
         }
         
         public function getTotal(){
             return $this->total;
         }
         
-        public function setTotal($total){
+        public function setTotal ($total){
             return $this->total = $total;
         }
         
         //METODOS
         
-        public function anyadirProducto($producto){
+        public function anyadirProducto ($producto){
             
             /* Comprobar si el producto ya ha sido añadido a la cesta, recorriendo los productos de la misma, y si el identificador del producto que se quiere
             introducir coincide con alguno de los que ya hay en la cesta, se incrementa la cantidad de dicho producto dentro de la cesta */
@@ -41,7 +50,7 @@
             $this->calcularTotal();
         }
         
-        public function quitarProducto($id){
+        public function quitarProducto ($id){
             
             /* A partir del id, se buscará un objeto con dicho id en los productos y se le restará 1 a la cantidad. Si hecho hesto la cantidad es igual a 0, el objeto
             es removido del carrito */
@@ -58,7 +67,7 @@
             
         }
         
-        public function calcularTotal(){
+        public function calcularTotal (){
             
             $this->setTotal(0);
             

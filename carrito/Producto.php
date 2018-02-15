@@ -35,20 +35,33 @@
         public function getNombre(){
             return $this->nombre;
         }
+        
         public function getDesc(){
             return $this->desc;
         }
+        
         public function getPrecio(){
             return $this->precio;
         }
+        
         public function getCantidad(){
             return $this->cantidad;
         }
+        
         public function getCat(){
             return $this->categoria;
         }
+        
         public function getTotal(){
             return $this->total;
+        }
+        
+        public function getImg(){
+            return $this->img;
+        }
+        
+        public function getStock(){
+            return $this->stock;
         }
         
         //METODOS
