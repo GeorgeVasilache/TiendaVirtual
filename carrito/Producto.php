@@ -73,6 +73,7 @@
         
         public function reducirCantidad(){
             $this->cantidad--;
+            $this->total = $this->precio * $this->cantidad;
         }
     }
 ?>

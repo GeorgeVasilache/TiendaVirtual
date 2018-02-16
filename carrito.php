@@ -34,7 +34,7 @@
                     </tr>";
         foreach($productos as $producto){
             
-            echo "<tr class='row'><td class='col-1'> <img class='img-fluid'src='{$producto->getImg()}'/> </td>";
+            echo "<tr class='row' id='r{$producto->getID()}'><td class='col-1'> <img class='img-fluid'src='{$producto->getImg()}'/> </td>";
             echo "<td class='col-1'> {$producto->getNombre()} </td>";
             echo "<td class='col-5'> {$producto->getDesc()} </td>";
             echo "<td class='col-2'> %{$producto->getCat()}% </td>";
@@ -42,7 +42,7 @@
             echo "<td class='col-1'> {$producto->getTotal()}€ </td>";
             echo "<td><button type='button' class='btn btn-warning remover' id='{$producto->getId()}'><i class='material-icons'>delete</i></button></td>";
         }
-        echo "<tr class='row'><td class='col-1'></td><td class='col-1'></td><td class='col-5'></td><td class='col-2'></td></td><th class='col-2'>TOTAL:</th><th class='col-1'>".$_SESSION["carrito"]->getTotal()."€</th></tr>";
+        echo "<tr class='row'><td class='col-1'></td><td class='col-1'></td><td class='col-5'></td><td class='col-2'></td></td><th class='col-2'>TOTAL:</th><th class='col-1' id='total'>".$_SESSION["carrito"]->getTotal()."€</th></tr>";
         echo "</table>";
         
         echo "<a href='confirmar_compra.php' class='btn btn-lg btn-primary'>Finalizar Compra</a></div>";

@@ -1,22 +1,9 @@
 $(function(){
      //Botón de añadir al carrito
-     $("#comprar").click(function(){
-          $("#respuesta").load("anyadir_al_carrito.php","id="+getParametroUrl("id"));
-     });
+     $("#comprar").click(comprar);
      
      //Botón de quitar del carrito
-     $(".remover").click(function(){
-          //Hacemos la llamada a ajax mediante jquery
-          $.ajax({url: "remover_del_carrito.php", data: "id="+this.id, success: function(responseTxt){
-               var r = JSON.parse(responseTxt);
-               $("#respuesta").text(r.respuesta);
-               
-               //Si la cantidad resultante del producto es 0, se quita la fila de la tabla CAMBIARLO PARA QU SE MUESTRE BIEN
-               if(r.cantidad == 0){
-                    $("tr #"+this.id).remove();
-               }
-          }});
-     })
+     $(".remover").click(remover);
 });
 
 //Función que busca un parámeto get de la de url
@@ -34,3 +21,27 @@ function getParametroUrl (param) {
         }
     }
 };
+
+function comprar (){
+          $("#respuesta").load("anyadir_al_carrito.php","id="+getParametroUrl("id"));
+}
+
+function remover (){
+          //Hacemos la llamada a ajax mediante jquery
+          $.ajax({url: "remover_del_carrito.php", data: "id="+this.id, success: function(responseTxt){
+               
+               var r = JSON.parse(responseTxt);
+               $("#respuesta").html(r.respuesta);
+               
+               //Si la cantidad resultante del producto es 0, se quita la fila de la tabla
+               if(r.cantidad == 0){
+                    $("#r"+r.id).remove(); console.log("Cantidad en 0");
+               }
+               else{
+                    //Seleccionamos las filas correspondientes y actualizamos los datos
+                    $("#r"+r.id+" td:nth-child(5)").text(r.cantidad);
+                    $("#r"+r.id+" td:nth-child(6)").text(r.precio+"€");
+                    $("#total").text(r.total+"€");
+               }
+          }});
+     }
