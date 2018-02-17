@@ -33,6 +33,7 @@
         
         //METODOS
         
+        //Función que añade un roducto al carrito. Si el producto introducido ya está, se aumenta la cantidad del mismo
         public function anyadirProducto ($producto){
             
             /* Comprobar si el producto ya ha sido añadido a la cesta, recorriendo los productos de la misma, y si el identificador del producto que se quiere
@@ -50,6 +51,7 @@
             $this->calcularTotal();
         }
         
+        //Función que elimina una unidad del producto especificado. Si la unidad eliminada era la última, se remueve del array de productos
         public function quitarProducto ($id){
             
             /* A partir del id, se buscará un objeto con dicho id en los productos y se le restará 1 a la cantidad. Si hecho hesto la cantidad es igual a 0, el objeto
@@ -66,7 +68,7 @@
             $this->calcularTotal();
             
         }
-        
+        //Función qe calcula el total del carrito
         public function calcularTotal (){
             
             $this->setTotal(0);
@@ -74,6 +76,17 @@
             //recorremos todos los productos y sumamos el precio de cada productos por la cantidad de productos de cada tipo
             for($i = 0 ; $i < count($this->productos) ; $i++){
                 $this->total += $this->productos[$i]->getTotal();
+            }
+        }
+        
+        //Función que elimina todas las unidades de un producto del carrito
+        public function eliminarProducto ($id){
+             for($i = 0 ; $i < count($this->productos) ; $i++){
+                if($this->productos[$i]->getId() == $id){
+                    array_splice($this->productos, $i, 1);
+                    $this->calcularTotal();
+                    $i = count($this->productos);
+                }
             }
         }
         

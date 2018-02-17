@@ -13,11 +13,13 @@
     $titulo = "Carrito de la Compra";
     
     session_start();
-            
+    
+    //Si no existe el carrito, se redirige a la página principal
     if(!isset($_SESSION["carrito"])){
         
         header("Location: index.php");
     }
+    
     function mostrarCarrito(){
         $productos = $_SESSION["carrito"]->getProductos();
         
