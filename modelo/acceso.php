@@ -140,5 +140,36 @@
    $result = consultar_base_de_datos("delete from usuarios where id='$id';", $link);
  }
  
+ //Functión que registra un pedido en la bse de datos a partir del carrito y el id del usuario
+ function confirmarCompra ($carrito, $id_usuario){
+   
+   $link = abrir_conexion();
+   
+   //Obtenemos la fecha en la que se realiza el pedido
+   $date = getdate();
+   
+   //Extraemos solamente día, mes y año
+   $fecha = $date["mday"]."/".$date["mon"]."/".$date["year"];
+   
+   //Insertamos los datos del pedido en la tambla pedido
+   $result = consultar_base_de_datos("INSERT INTO pedidos VALUES ('DEFAULT', '{$id_usuario}', STR_TO_DATE('$fecha', '%d/%m/%Y'), 'pendiente');", $link);
+   $id_pedido = mysql_insert_id();
+   
+   //Insertamos por cada producto del pedido, una línea en la tabla compuesto
+   
+   $productos = $carrito->getProductos();
+
+   //Si todo ha ido bien, se devolverá un true, sino se devolverá false
+   foreach($productos as $producto){
+    if(!consultar_base_de_datos("INSERT INTO compuesto VALUES('{$id_pedido}', '{$producto->getID()}', {$producto->getCantidad()});", $link))
+      return false;
+    else
+      consultar_base_de_datos("UPDATE productos SET stock= stock-{$producto->getCantidad()} WHERE id = {$producto->getID()};", $link); //Se resta el stock
+   }
+   
+   return true;
+   
+ }
+ 
  
 ?>
