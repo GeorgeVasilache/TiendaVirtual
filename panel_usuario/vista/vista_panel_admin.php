@@ -55,4 +55,14 @@
         <h1 class="display-3">Lista de Productos</h1>
         <?php mostrarProductos() ?>
       </div>
+      
+      <div class="container">
+        <button class="btn btn-primary mb-3" type="button" data-toggle="collapse" data-target="#lista_pedidos" aria-expanded="false" aria-controls="lista_pedidos">
+        Lista de pedidos
+        </button>
+      </div>
+      <div class="collapse container" id="lista_pedidos">
+        <?php mostrarPedidos() ?>
+      </div>
+      
     <?php require_once("/home/ubuntu/workspace/TiendaVirtual/vista/plantilla_footer.php");?>

@@ -7,7 +7,7 @@
       $link = abrir_conexion();
 
       // Consulta
-      $result = consultar_base_de_datos('SELECT * FROM productos', $link);
+      $result = consultar_base_de_datos("SELECT * FROM productos", $link);
 
       // Rellenar el array
       $productos = array();
@@ -143,7 +143,7 @@
  //Functión que registra un pedido en la bse de datos a partir del carrito y el id del usuario
  function confirmarCompra ($carrito, $id_usuario){
    
-   $link = abrir_conexion();
+  
    
    //Obtenemos la fecha en la que se realiza el pedido
    $date = getdate();
@@ -169,6 +169,46 @@
    
    return true;
    
+ }
+ 
+ //Función que devuelve todos los pedidos de la base de datos
+ function listarPedidos(){
+    // Conexión a la base de datos
+      $link = abrir_conexion();
+
+      // Consulta
+      $result = consultar_base_de_datos("SELECT * FROM pedidos", $link);
+
+      // Rellenar el array
+      $pedidos = array();
+      while ($fila = extraer_resultados($result))
+      {
+      $pedidos[] = $fila;
+      }
+
+      // Cierre de conexión
+      cerrar_conexion($link);
+      return $pedidos;
+ }
+ 
+ //Función que devuelve todos los id de los productos junto con su cantidad en un pedido en concreto
+ function sacarProductosPedido($id){
+  
+      $link = abrir_conexion();
+
+      // Consulta
+      $result = consultar_base_de_datos("SELECT * FROM compuesto where IDpedido = {$id}", $link);
+      
+      // Rellenar el array
+      $productos = array();
+      while ($fila = extraer_resultados($result))
+      {
+      $productos[] = $fila;
+      }
+
+      // Cierre de conexión
+      cerrar_conexion($link);
+      return $productos;
  }
  
  

@@ -15,7 +15,7 @@
     <link href="/TiendaVirtual/vista/css/modern-business.css" rel="stylesheet"/>
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-    <link rel="stylesheet" href="/TiendaVirtual/vista/css/pagina_principal.css" type="text/css" />
+    <link rel="stylesheet" href="/TiendaVirtual/vista/css/estilos.css" type="text/css" />
   </head>
 
   <body>

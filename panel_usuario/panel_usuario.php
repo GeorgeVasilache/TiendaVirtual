@@ -20,13 +20,13 @@
         
         //funcion para mostrar todos los productos de la base de datos
         
-        function mostrarProductos(){
+        function mostrarProductos (){
           $productos = listarProductos();
           
           echo "<table class='table table-striped'><tr><th> Producto </th><th> Nombre </th><th>Descripción</th><th>Categoría</th><th>Precio</th><th>Stock</th>";
           foreach($productos as $producto){
               
-              echo "<tr><td><img src='{$producto["img"]}' style='width : 100px; height : 100px'/></td>";
+              echo "<tr><td><img src='{$producto["img"]}' class='icono'/></td>";
               echo "<td>{$producto["nombre"]}</td>";
               echo "<td>{$producto["descripcion"]}</td>";
               echo "<td>%{$producto["categoria"]}%</td>";
@@ -36,6 +36,42 @@
           }
           echo "</table>";
           
+        }
+        
+        function mostrarPedidos (){
+          
+          //Sacamos todos los pedidos
+          $pedidos = listarPedidos();
+          
+          //Por cada pedido, sacamos el nombre del usuario y los datos de los productos del pedido
+          foreach($pedidos as $pedido){
+            $usuario = sacarUsuario($pedido["IDusuario"]);
+            $productos_pedido = sacarProductosPedido($pedido["id"]);
+            
+            //Imprimimos los datos del pedido y el nombre del usuario
+            echo "<ul class='list-group my-4'>
+                    <li class='list-group-item'><span class='font-weight-bold'>Pedido Nº : </span>{$pedido["id"]}</li>
+                    <li class='list-group-item'><span class='font-weight-bold'>Nombre : </span>{$usuario["nombre"]}</li>
+                    <li class='list-group-item'><span class='font-weight-bold'>Fecha : </span>{$pedido["fecha"]}</li>
+                    <li class='list-group-item'><span class='font-weight-bold'>Estado : </span>{$pedido["estado"]}</li>";
+                    
+                    
+            echo    "<li class='list-group-item'>
+                      <ul class='list-group'>";
+                      //En la última línea de la lista se imprime otra lista con los datos de todos los productos del pedido
+                      foreach ($productos_pedido as $producto_pedido) {
+                        $producto = sacarProducto($producto_pedido["IDproducto"]);
+                        
+                        echo "<li class='list-group-item'>
+                                <img class='icono' src='{$producto["img"]}'/> {$producto["nombre"]} x{$producto_pedido["cantidad"]}
+                              </li>";
+                      }
+                      
+            echo    " </ul>
+                    </li>
+                  </ul>";
+            
+          }
         }
         
         //vista del panel del administrador
