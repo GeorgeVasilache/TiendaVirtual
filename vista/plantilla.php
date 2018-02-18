@@ -24,8 +24,8 @@
         <!-- Navegación -->
         <nav class="navbar fixed-top navbar-expand-xl navbar-dark bg-dark">
           <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">Tienda virtual de George</a>
-            <?php echo $msjRegistro ?>
+            <a class="navbar-brand" href="/TiendaVirtual/index.php">Tienda virtual de George</a>
+            <?php echo $msj_registro ?>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>

@@ -9,7 +9,7 @@
         </div>
         <div class="form-group">
           <label for="nick">Nick</label>
-          <input type="text" class="form-control" id="email" name="nick" aria-describedby="nickHelp" placeholder="Introduzca su nick" required="required">
+          <input type="text" class="form-control" id="nick" name="nick" aria-describedby="nickHelp" placeholder="Introduzca su nick" required="required">
           <small id="nickHelp" class="form-text text-muted">El nick será necesario para iniciar sesión</small>
         </div>
         <div class="form-group">

@@ -23,7 +23,7 @@ function getParametroUrl (param) {
 };
 
 function comprar (){
-          $("#respuesta").load("anyadir_al_carrito.php","id="+getParametroUrl("id"));
+          $("#respuesta").load("carrito/anyadir_al_carrito.php","id="+getParametroUrl("id"));
 }
 
 function remover (){
@@ -35,7 +35,13 @@ function remover (){
                
                //Si la cantidad resultante del producto es 0, se quita la fila de la tabla
                if(r.cantidad == 0){
-                    $("#r"+r.id).remove(); console.log("Cantidad en 0");
+                    $("#r"+r.id).remove();
+                    $("#total").text(r.total+"€");
+                    
+                    //Si después de esto no quedan elementos en la tabla, se redirigirá al index
+                    
+                    if ($('table tr').length == 2) window.location.replace("/TiendaVirtual/index.php");
+                    
                }
                else{
                     //Seleccionamos las filas correspondientes y actualizamos los datos

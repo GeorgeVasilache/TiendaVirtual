@@ -1,10 +1,10 @@
 <?php
     //Clases
-    require_once("carrito/Carrito.php");
-    require_once("carrito/Producto.php");
+    require_once("/home/ubuntu/workspace/TiendaVirtual/carrito/Carrito.php");
+    require_once("/home/ubuntu/workspace/TiendaVirtual/carrito/Producto.php");
     
     //Acceso a la base de datos
-    require_once("modelo/acceso.php");
+    require_once("/home/ubuntu/workspace/TiendaVirtual/modelo/acceso.php");
     
     //Controlador
     

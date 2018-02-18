@@ -16,7 +16,7 @@
     $titulo = "Tienda virtual de George";
     
     //Si se acaban de registrar, y llega el parámetro r, saldrá un texto indicando que ya se puede iniciar sesión
-    if($_GET["r"] == 1) $msjRegistro = "<span class='text-success ml-5'>Registro completado, ahora puede iniciar sesión</span>";
+    if($_GET["r"] == 1) $msj_registro = "<span class='text-success ml-5'>Registro completado</span>";
     
     // MOSTRAR PRODUCTOS
     

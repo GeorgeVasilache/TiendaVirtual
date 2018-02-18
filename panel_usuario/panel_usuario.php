@@ -3,10 +3,10 @@
     //primero comprobamos que haya una sesión abierta mediante la cookie
     if(isset($_COOKIE["id"])){
       //acceso a la base de datos
-      require_once("modelo/acceso.php");
+      require_once("/home/ubuntu/workspace/TiendaVirtual/modelo/acceso.php");
       
       //módulo de inicio de sesión
-      require_once("inicio_sesion.php");
+      require_once("/home/ubuntu/workspace/TiendaVirtual/inicio_sesion.php");
       
       //El admin tiene la id 16 en la base de datos
       if($_COOKIE["id"] == "16"){
@@ -39,14 +39,14 @@
         }
         
         //vista del panel del administrador
-        require_once("panel_usuario/vista/vista_panel_admin.php");
+        require_once("/home/ubuntu/workspace/TiendaVirtual/panel_usuario/vista/vista_panel_admin.php");
       } 
       else{
         $titulo = "Panel de usuario";
         $usuario = sacarUsuario($_COOKIE["id"]);
         
         //vista del panel de usuario
-        require_once("panel_usuario/vista/vista_panel_usuario.php");
+        require_once("/home/ubuntu/workspace/TiendaVirtual/panel_usuario/vista/vista_panel_usuario.php");
       }
     }
     //si no hya una sesión abierta, redirigimos a la página principal de la tienda

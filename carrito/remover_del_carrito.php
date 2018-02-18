@@ -1,10 +1,10 @@
 <?php
     //Clases
-    require_once("carrito/Carrito.php");
-    require_once("carrito/Producto.php");
+    require_once("/home/ubuntu/workspace/TiendaVirtual/carrito/Carrito.php");
+    require_once("/home/ubuntu/workspace/TiendaVirtual/carrito/Producto.php");
     
     //Acceso a la base de datos
-    require_once("modelo/acceso.php");
+    require_once("/home/ubuntu/workspace/TiendaVirtual/modelo/acceso.php");
     
     //Controlador
     
@@ -27,6 +27,9 @@
     
     //Cogemos el total del carrito una vez realizado el cambio
     $total = $_SESSION["carrito"]->getTotal();
+    
+    //Si el carrito se queda vacío después de eliminar el producto, se destruye
+    if(count($_SESSION["carrito"]->getProductos()) == 0) session_destroy();
     
     //La respuesta está compuesta por una cadena que se mostrará y la cantidad restante en el carrito después de remover el producto
     echo ('{

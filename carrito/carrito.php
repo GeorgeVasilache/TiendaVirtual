@@ -1,23 +1,23 @@
 <?php
     //Clases
-    require_once("carrito/Carrito.php");
-    require_once("carrito/Producto.php");
+    require_once("/home/ubuntu/workspace/TiendaVirtual/carrito/Carrito.php");
+    require_once("/home/ubuntu/workspace/TiendaVirtual/carrito/Producto.php");
     
     //Acceso a la base de datos
-    require_once("modelo/acceso.php");
+    require_once("/home/ubuntu/workspace/TiendaVirtual/modelo/acceso.php");
     
     //Controlador
     
-    require_once("inicio_sesion.php");
+    require_once("/home/ubuntu/workspace/TiendaVirtual/inicio_sesion.php");
     
     $titulo = "Carrito de la Compra";
     
     session_start();
     
     //Si no existe el carrito, se redirige a la página principal
-    if(!isset($_SESSION["carrito"])){
+    if(!isset($_SESSION["carrito"]) || count($_SESSION["carrito"]->getProductos()) == 0){
         
-        header("Location: index.php");
+        header("Location: /TiendaVirtual/index.php");
     }
     
     function mostrarCarrito(){
@@ -51,4 +51,4 @@
     }
     
     //Vista
-    require_once("carrito/vista/vista_carrito.php");
+    require_once("/home/ubuntu/workspace/TiendaVirtual/carrito/vista/vista_carrito.php");

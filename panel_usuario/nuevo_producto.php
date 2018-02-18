@@ -1,5 +1,5 @@
 <?php
-          require_once("modelo/acceso.php");
+          require_once("/home/ubuntu/workspace/TiendaVirtual/modelo/acceso.php");
           
           //creamos un objeto de la clas SplFileInfo para obtener la extensión del archivo subido
           $info = new SplFileInfo($_FILES["img"]["name"]);
