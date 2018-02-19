@@ -143,7 +143,7 @@
  //Functión que registra un pedido en la bse de datos a partir del carrito y el id del usuario
  function confirmarCompra ($carrito, $id_usuario){
    
-  
+    $link = abrir_conexion();
    
    //Obtenemos la fecha en la que se realiza el pedido
    $date = getdate();

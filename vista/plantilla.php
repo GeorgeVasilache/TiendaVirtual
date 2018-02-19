@@ -36,9 +36,9 @@
                     Productos
                   </a>
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="productos">
-                    <a class="dropdown-item" href="productos.php?cat=m">Magic The Gathering</a>
-                    <a class="dropdown-item" href="productos.php?cat=l">Liros de Rol</a>
-                    <a class="dropdown-item" href="productos.php?cat=j">Juegos de mesa</a>
+                    <a class="dropdown-item" href="/TiendaVirtual/productos.php?cat=m">Magic The Gathering</a>
+                    <a class="dropdown-item" href="/TiendaVirtual/productos.php?cat=l">Liros de Rol</a>
+                    <a class="dropdown-item" href="/TiendaVirtual/productos.php?cat=j">Juegos de mesa</a>
                   </div>
                 </li>
             <?php echo imprimirInicioSesion() ?>
