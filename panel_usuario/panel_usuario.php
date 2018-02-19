@@ -51,7 +51,7 @@
             //Imprimimos los datos del pedido y el nombre del usuario
             echo "<ul class='list-group my-4'>
                     <li class='list-group-item'><span class='font-weight-bold'>Pedido Nº : </span>{$pedido["id"]}</li>
-                    <li class='list-group-item'><span class='font-weight-bold'>Nombre : </span>{$usuario["nombre"]}</li>
+                    <li class='list-group-item'><span class='font-weight-bold'>Nombre : </span>{$usuario["nombre"]} {$usuario["apellidos"]}</li>
                     <li class='list-group-item'><span class='font-weight-bold'>Fecha : </span>{$pedido["fecha"]}</li>
                     <li class='list-group-item'><span class='font-weight-bold'>Estado : </span>{$pedido["estado"]}</li>";
                     

@@ -1,0 +1,23 @@
+html, body, #container {
+    height: 100%;
+    min-height: 100%;
+}
+.carousel-inner > .carousel-item > img{
+      margin:0 auto;
+}
+.carta{
+      height: 300px;
+}
+.carrito{
+      width: 200px !important;
+}
+.icono{
+     height: 100px;
+     width: 100px;
+}
+.imgProducto{
+     max-width: 400px;
+}
+
+
+

@@ -22,7 +22,7 @@
         $disponibilidad = "success"; 
         
         if(sesionAbierta())
-            $comprar = "<button id='comprar' class='btn btn-success carrito ml-4'><i class='material-icons text-dark'>add_shopping_cart</i></button>";
+            $comprar = "<button id='comprar' class='btn btn-success carrito m-4'>Añadir al carrito </button>";
         else
             $comprar = "<span class='text-warning display-4'>Debe iniciar sesión para poder comprar</span>";
     } 
