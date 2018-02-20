@@ -13,7 +13,7 @@
             
             eliminarProducto($_GET["eliminar"]);
                          
-            header ( "Location: panel_usuario.php");
+            header ( "Location: /TiendaVirtual/panel_usuario/panel_usuario.php");
             exit;
    
 ?>

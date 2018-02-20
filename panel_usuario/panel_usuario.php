@@ -87,7 +87,7 @@
     }
     //si no hya una sesión abierta, redirigimos a la página principal de la tienda
     else{
-      header("Location: index.php");
+      header("Location: /TiendaVirtual/index.php");
       exit();
     }
 ?>

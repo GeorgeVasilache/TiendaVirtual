@@ -12,7 +12,7 @@
     
     //Si no existe la variable de sesión carrito, se redirige a la página principal
     if(!isset($_SESSION["carrito"])){
-        header("Location: index.php");
+        header("Location: /TiendaVirtual/index.php");
         exit();
     }
     
@@ -30,6 +30,5 @@
         $exito = "<h1 class='display-4 text-danger'>Error al procesar el pedido</h1>";
         
     require_once("/home/ubuntu/workspace/TiendaVirtual/vista/compra_finalizada.php");
-    require_once("/home/ubuntu/workspace/TiendaVirtual/vista/plantilla_footer.php")
 ?>
      

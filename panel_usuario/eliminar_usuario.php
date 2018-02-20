@@ -7,7 +7,7 @@
           eliminarUsuario($_GET["u"]);
           borrarCookie();
                          
-          header ("Location: ../index.php");
+          header ("Location: /TiendaVirtual/index.php");
           exit;
 
 ?>

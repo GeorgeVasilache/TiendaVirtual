@@ -21,9 +21,9 @@
                     $url = "/TiendaVirtual/img/". $_POST['nombre'].".".$info->getExtension();
                     
                     anyadirProducto($nombre, $desc, $cat, $precio, $stock, $url);
-                    header("Location: panel_usuario.php?nuevo=1");
+                    header("Location: /TiendaVirtual/panel_usuario/panel_usuario.php?nuevo=1");
           } else {
-              header("Location: panel_usuario.php?nuevo=0");
+              header("Location: /TiendaVirtual/panel_usuario/panel_usuario.php?nuevo=0");
           }
 
 
