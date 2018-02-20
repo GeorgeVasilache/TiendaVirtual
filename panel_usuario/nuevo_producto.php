@@ -1,7 +1,7 @@
 <?php
           require_once("/home/ubuntu/workspace/TiendaVirtual/modelo/acceso.php");
           
-          //creamos un objeto de la clas SplFileInfo para obtener la extensión del archivo subido
+          //Creamos un objeto de la clas SplFileInfo para obtener la extensión del archivo subido
           $info = new SplFileInfo($_FILES["img"]["name"]);
             
           $nombre = $_POST["nombre"];
@@ -10,7 +10,7 @@
           $precio = $_POST["precio"];
           $stock = $_POST["stock"];
           
-          //esta variable es la url donde se guardara la imagen del producto
+          //Esta variable es la url donde se guardara la imagen del producto
           $dir_subida = '/home/ubuntu/workspace/TiendaVirtual/img/';
           $url = $dir_subida . $_POST['nombre'].".".$info->getExtension();
           

@@ -23,7 +23,7 @@
     
     // MOSTRAR PRODUCTOS
     
-    //cogemos los productos de la categoría indicada en la url para mostrarlos
+    //Cogemos los productos de la categoría indicada en la url para mostrarlos
     $productos = listarProductosPorCategoria($_GET["cat"]);
     
     //Vista

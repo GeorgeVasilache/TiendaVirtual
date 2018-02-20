@@ -15,6 +15,7 @@
             $post=file_get_contents('php://input');
             $mi_servidor->service($post);
             
+            //El servicio devuelve el precio y las unidades disponibles a partir del nombre que se la ha proporcionado
              function producto ($nombre){
                $producto = sacarProductoPorNombre($nombre);
                

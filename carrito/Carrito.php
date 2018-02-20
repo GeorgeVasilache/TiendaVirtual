@@ -1,8 +1,12 @@
 <?php
+    //Clase que se instanciará en la variable de sesión y a la que se le irán añadiendo objetos de tipo Producto
     class Carrito{
+        //Array de productos
         private $productos;
+        //Total del carrito
         private $total;
         
+        //Constructor
         public function __construct(){
             $this->productos = array();
             $this->total = 0;

@@ -12,7 +12,6 @@
     //Controlador
     require_once("inicio_sesion.php");
     
-    
     $titulo = "Tienda virtual de George";
     
     //Si se acaban de registrar, y llega el parámetro r, saldrá un texto indicando que ya se puede iniciar sesión
@@ -20,15 +19,15 @@
     
     // MOSTRAR PRODUCTOS
     
-    //cogemos los productos de la base de datos para mostrarlos
+    //Cogemos los productos de la base de datos para mostrarlos
     $productos = listarProductos();
     
-    //los 3 primeros productos los usaremos para mostrarlos en las slides
+    //Los 3 primeros productos los usaremos para mostrarlos en las slides
     $productos_slide[] = $productos[0];
     $productos_slide[] = $productos[1];
     $productos_slide[] = $productos[2];
     
-    //el resto de productos serán mostrados en las cartas de abajo
+    //El resto de productos serán mostrados en las cartas de abajo
     for($i = 3 ; $i < count($productos) ; $i++){
         $productos_extra[] = $productos[$i];
     }

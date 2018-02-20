@@ -13,7 +13,7 @@
     //Cogemos el producto en cuestión
     $producto = $_SESSION["carrito"]->getProducto($_GET["id"]);
     
-    //Comprobamos cuántas unidades hay en el carrito, si hay más de 1 se cdogen los datos directamente del producto
+    //Comprobamos cuántas unidades hay en el carrito, si hay más de 1 se cogen los datos directamente del producto
     if($producto->getCantidad() > 1){
         $_SESSION["carrito"]->quitarProducto($_GET["id"]);
         $restante = $producto->getCantidad();

@@ -1,4 +1,5 @@
 <?php
+//Conjunto de métodos que serán llamados desde toda la tienda, y que a su vez utilizan los métodos del archivo "abstracción.php"
  require_once ('abstraccion.php');
 
  //Devuelve un array con todos los productos existentes en la base de datos

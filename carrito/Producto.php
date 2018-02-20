@@ -1,6 +1,7 @@
 <?php
     //Clase que se utilizará para los productos del carrito de la compra
     class Producto{
+        //Datos del producto
         private $id;
         private $nombre;
         private $desc;
@@ -8,14 +9,21 @@
         private $precio;
         private $stock;
         private $img;
+        
+        //Cantidad de unidades del producto en el carrito
         private $cantidad;
+        
+        //Total del coste de todas las unidades
         private $total;
         
+        //Constructor
         public function __construct($id){
             $this->id = $id;
             
+            //Sacamos los datos del producto de la base de datos
             $producto = sacarProducto($id);
             
+            //Rellenamos los atributos con los datos
             $this->nombre = $producto["nombre"];
             $this->desc = $producto["descripcion"];
             $this->precio = $producto["precio"];
@@ -66,13 +74,19 @@
         
         //METODOS
         
+        //Función que aumenta la cantidad del producto
         public function aumentarCantidad(){
             $this->cantidad++;
+            
+            //Volvemos a calcular el total tras los cambios
             $this->total = $this->precio * $this->cantidad;
         }
         
+        //Función que reduce la cantidad del producto
         public function reducirCantidad(){
             $this->cantidad--;
+            
+            //Volvemos a calcular el total tras los cambios
             $this->total = $this->precio * $this->cantidad;
         }
     }

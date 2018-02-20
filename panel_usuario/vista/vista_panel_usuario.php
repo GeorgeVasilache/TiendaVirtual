@@ -1,5 +1,5 @@
     <?php require_once("/home/ubuntu/workspace/TiendaVirtual/vista/plantilla.php");?>
-    <!-- Contenido del carrito de la compra-->
+    <!-- Vista del panel de usuario-->
     <div class="container">
       <h1 class="display-1"><?php echo $titulo ?></h1>
       <div class="jumbotron">

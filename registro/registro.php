@@ -10,7 +10,8 @@
     $titulo = "Registro";
     
     if(isset($_GET["email"])){
-        //comprobamos que no haya ningún usuario con el mismo nick ya registrado en la base de datos
+        //Comprobamos que no haya ningún usuario con el mismo nick ya registrado en la base de datos. No se registrará si ya existe el nick en la base de datos
+        //Si se registra, se redirige a la página principal, y sino, de vuelva al formulario de registro con un mensaje de error
         if (comprobarDisponibilidad($_GET["nick"]) !== false){
             registrarUsuario($_GET["email"], $_GET["nick"], $_GET["pass"], $_GET["nombre"], $_GET["apellidos"], $_GET["dir"], $_GET["tlf"]);
             header("Location: /TiendaVirtual/index.php?r=1");

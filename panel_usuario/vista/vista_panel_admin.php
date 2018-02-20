@@ -1,5 +1,6 @@
     <?php require_once("/home/ubuntu/workspace/TiendaVirtual/vista/plantilla.php");?>
     
+    <!-- Vista del panel de administración -->
       <div class="container">
         <div class="jumbotron jumbotron-fluid mt-3">
           <div class="container">

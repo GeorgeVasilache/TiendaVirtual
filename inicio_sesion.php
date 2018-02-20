@@ -35,7 +35,7 @@
             else{
               $usuario = sacarUsuario($_COOKIE["id"]);
               
-              //Comprobamos si ya hay parámetros get en la url
+              //Comprobamos si ya hay parámetros get en la url y se añade el nuevo
               
               if(strpos($_SERVER["REQUEST_URI"], "?") === false) $url = $_SERVER['REQUEST_URI']."?x=1";
               else                                               $url = $_SERVER['REQUEST_URI']."&x=1";

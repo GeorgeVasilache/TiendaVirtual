@@ -1,4 +1,4 @@
-<?php //Función utilizada para imprimir las cartas con los producttos indicados
+<?php //Función utilizada para imprimir las cartas con los productos indicados
 
 function imprimirCartas ($productos_extra){
         

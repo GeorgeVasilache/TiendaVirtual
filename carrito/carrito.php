@@ -20,6 +20,7 @@
         header("Location: /TiendaVirtual/index.php");
     }
     
+    //Función que imprime la tabla con los datos del carrito que se encuentra en la variable de sesión
     function mostrarCarrito(){
         $productos = $_SESSION["carrito"]->getProductos();
         
@@ -34,6 +35,7 @@
                         <th class='col-1'>Cantidad</th>
                         <th class='col-1'>Precio</th>
                     </tr>";
+        //Se imprimen los datos de cada producto
         foreach($productos as $producto){
             
             echo "<tr class='row' id='r{$producto->getID()}'><td class='col-1'> <img class='img-fluid'src='{$producto->getImg()}'/> </td>";
@@ -47,6 +49,7 @@
         echo "<tr class='row'><td class='col-1'></td><td class='col-1'></td><td class='col-5'></td><td class='col-2'></td></td><th class='col-2'>TOTAL:</th><th class='col-1' id='total'>".$_SESSION["carrito"]->getTotal()."€</th></tr>";
         echo "</table>";
         
+        //Botón de finalizar compra
         echo "<a href='confirmar_compra.php' class='btn btn-lg btn-primary'>Finalizar Compra</a></div>";
     }
     
