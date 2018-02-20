@@ -16,7 +16,10 @@
             header("Location: /TiendaVirtual/index.php?r=1");
             exit;
         }
-        else echo "Usuario no disponible";
+        else header("Location: /TiendaVirtual/registro/registro.php?x=1");
     }
-    else require_once("/home/ubuntu/workspace/TiendaVirtual/registro/vista_registro.php");
+    else{
+        if($_GET["x"] == 1) $msj = "<span class='text-danger'>Usuario no disponible</span>";
+        require_once("/home/ubuntu/workspace/TiendaVirtual/registro/vista_registro.php");  
+    } 
 ?>

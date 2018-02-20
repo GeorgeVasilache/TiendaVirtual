@@ -2,6 +2,7 @@
     <!-- Contenido del carrito de la compra-->
     <div class="container my-3">
       <h1><?php echo $titulo ?></h1>
+      <?php echo $msj ?>
       <form action="registro.php" method="get">
         <div class="form-group">
           <label for="email">Email</label>
