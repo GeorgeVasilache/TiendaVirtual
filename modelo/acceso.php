@@ -211,5 +211,19 @@
       return $productos;
  }
  
+ //Función que devuelve todos los datos de un producto a partir de su nombre
+ function sacarProductoPorNombre($nombre){
+       $link = abrir_conexion();
+
+      // Consulta
+      $result = consultar_base_de_datos("SELECT * FROM productos where nombre = '{$nombre}'", $link);
+      
+      $producto = extraer_resultados($result);
+
+      // Cierre de conexión
+      cerrar_conexion($link);
+      return $producto;
+ }
+ 
  
 ?>
